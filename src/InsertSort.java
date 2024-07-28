@@ -10,7 +10,11 @@ public class InsertSort {
 
     public static void insertSort(int[] arr) {
         int n = arr.length;
-        for (int i = 1; i < n; i++) {
+        int count=0;
+        while(arr[count+1]>=arr[count]&&count<n-1){
+            count++;
+        }
+        for (int i = count+1; i < n; i++) {
             int min = arr[i];
             for (int j = i - 1; j >= 0; j--) {
                 if (arr[j] > min) {
