@@ -10,23 +10,14 @@ public class InsertSort {
 
     public static void insertSort(int[] arr) {
         int n = arr.length;
-        int count=0;
-        while(arr[count+1]>=arr[count]&&count<n-1){
-            count++;
-        }
-        for (int i = count+1; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             int min = arr[i];
-            for (int j = i - 1; j >= 0; j--) {
-                if (arr[j] > min) {
-                    arr[j + 1] = arr[j];
-                    if(j==0){
-                        arr[j] = min;
-                    }
-                }else{
-                    arr[j+1]=min;
-                    break;
-                }
+            int j = i;
+            while (j > 0 && arr[j - 1] > min) { // 将比min大的元素后移
+                arr[j] = arr[j - 1];
+                j--;
             }
+            arr[j] = min; // 将min插入到正确的位置
         }
     }
 }
