@@ -10,7 +10,6 @@ public class MergeSort {
     }
 
     public static void mergeSort(int[] arr, int[] temp, int left, int right) {
-        int n = arr.length;
         int gap = right - left; //计算步长
         if (gap <= 0) {
             return;
